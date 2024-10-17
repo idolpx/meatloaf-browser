@@ -249,12 +249,10 @@ load_data:
 
     lda #2
     ldx drive_number
-    ldy #2
+    ldy #$01 // $01 - Load to address stored in file
     jsr KERNAL_SETLFS
 
-    lda #00
-    ldx #00 // Set Load Address
-    ldy #00 // 
+    lda #$00 // $00 - Load to memory
     jsr KERNAL_LOAD
 
     inc $d020
